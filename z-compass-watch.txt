@@ -1,0 +1,2 @@
+этот проект для compass:
+bundle exec compass watch
