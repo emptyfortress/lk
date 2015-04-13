@@ -42,16 +42,103 @@
 html, body {
 height:100%;
 }
-.doc .top-bar {
-    @include box-shadow (darken($blue, 15%) 0px 5px 7px);
+
+.top-bar1 {overflow:hidden;}
+
+.doc top-bar, .doc .top-bar1 {
     color: $white;
     background: $blue url(../img/shad.png) top left no-repeat;
-    .top-bar-section li a {
+    height: rem-calc(65);
+    .top-bar-section li a, .section li a {
+//    background: $blue;
+    }
+}
+
+.doc .top-bar1 .top-bar-section ul li {
+    & a {
     background: $blue;
     }
 }
 
-.top-bar-section ul {padding-left: 40px;}
+.clear {clear:both;}
+.marg-l20 {margin-left:20px;}
+.marg-l40 {margin-left:40px;}
+.fl-l {float: left;}
+
+
+.section li {float: left;}
+
+.top-bar1 ul {
+    list-style:none;
+    margin:0;
+}
+
+.big {
+    line-height: 4rem;
+    font-size: rem-calc(25);
+    color:white;
+    font-family: Segoe UI Light;
+    padding: 15px 20px 17px;
+    &:hover {
+    background: scale-color($blue, $lightness: -30%);
+    color:white;
+    }
+}.big1 {
+    display: inline-block;
+    line-height: 4rem;
+    font-size: rem-calc(25);
+    color:white;
+    font-family: Segoe UI Light;
+    margin: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    &:hover {
+    background: scale-color($blue, $lightness: -30%);
+//    color:white;
+    }
+}
+
+
+.gt {
+    line-height: rem-calc(65);
+}
+
+.f-dropdown li {
+  display: block;
+  font-size: rem-calc(16);
+  cursor: pointer;
+  line-height: rem-calc(20);
+  margin: 0;
+  float: none;
+    background: scale-color($blue, $lightness: -30%);
+    a {
+        padding: 18px;
+        color: white;
+        &:hover{
+        background: darken($blue, 5%);
+        }
+    }
+ 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.top-bar-section ul {padding-left: 20px;}
 .top-bar-section .dropdown li > a {
     background: #0072a7;
     line-height: 4rem;
@@ -61,6 +148,7 @@ height:100%;
 
 .doc .small-bar {
     background-color: darken($blue, 7%);
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.3);
     height: 42px;
     font-family: Segoe UI Light;
     ul {
@@ -78,7 +166,7 @@ height:100%;
         padding: 10px 20px;
     }
 }
-.small-bar li.add a {
+.small-bar li a:hover {
     background-color: darken($blue,20%);
 }
 
@@ -87,7 +175,6 @@ height:100%;
 .top-bar-section ul li > a.big {
     font-size: rem-calc(27);
 }
-body {height: 100%;}
 footer {
     display: block;
     position: fixed;
@@ -105,43 +192,119 @@ margin-right: 40px;
       background: transparent;
 }
 
-.top-bar-section .dropdown li:not(.has-form):not(.active).green > a:not(.button) {
-  color: #FFFFFF;
-  background: $green;
-}
 
-.top-bar-section .dropdown li:not(.has-form):not(.active).darkblue > a:not(.button) {
-  color: #FFFFFF;
-  background: $darkblue;
-}
 
-.top-bar-section li.gt {
-    background-color: transparent;
-    line-height: rem-calc(65);
-}
+
+.bluebg {background: $blue;}
+
 .doc aside .close {
     height: rem-calc(65);
     background-color: $blue;
 }
 
-.accordion .accordion-navigation > a {
-    &:hover {
-    background-color: darken($blue, 30%);}
+.ml-0 {
+    margin-left: 0;
 }
 
-.doc .accordion .accordion-navigation.active > a {
-    background-color: darken($blue, 10%);
+.left-off-canvas-menu {font-family: Segoe UI Light;}
+
+.accordion .accordion-navigation > a {
+    /*font-size: rem-calc(18);*/
+    font-family: Segoe UI Light;
+    text-transform: uppercase; 
+    &:hover {background-color: darken($blue, 30%);}
 }
-ul.no-bullet.light a {
-    color: rgba(255, 255, 255, 0.3);
-    display: block;
-    width: 100%;
+
+.accordion ul {
+    list-style: none;
+    margin: 0;
+}
+
+li.divider {
+    height: 1px;
+    line-height: 1px;
+    border-bottom: 1px solid lighten($darkblue, 5%);
+}
+
+
+ul.off-canvas-list li a {
+    border: 0; padding-left: 30px;
+    transition:none;
+    &:hover {background-color: rgba(#000, 0.15);color: #fff;}
+}
+
+//.left-submenu .back > a {
+//    background: darken($darkblue,10%); 
+//    height: rem-calc(65); 
+//    line-height: rem-calc(65);
+//}
+
+.accordion > li > a{ 
+   transition: all .5s;
+}
+.left-submenu .back > a {
+    background: darken($darkblue,10%) url(../img/back.png) no-repeat 0 0;
+    height: rem-calc(65);
+    line-height: rem-calc(65);
+    margin: 0; padding: 0; padding-left: 60px;
+    &:before {
+        content: none;
+    };
     &:hover {
-        color: $white;
-//        background-color: darken($blue, 30%);
-//        margin-left: 10px;
-        transition: all 200ms ease;
+        background: darken($darkblue,15%) url(../img/back.png) no-repeat 0 0;
+    };
 }
+
+.mycustom {
+    float:right;
+    li {
+    list-style:none;
+    float:left;
     }
+}
+
+
+
+@media only screen and (max-width: 700px) {
+    .myhide {display:none;}
+}
+
+#addModal a {
+    display: block;
+}
+
+#addModal ul {
+    list-style: none;
+    width: 100%;
+    margin-left: 0;
+    & a {
+        color: white;
+//        display: block;
+        padding: 10px;
+        width: 100%;
+    }
+    & li {border-top: 1px solid white;}
+}
+#addModal ul.sublist {
+    list-style: disc;
+    color: white;
+    list-style-position: inside;
+    width: auto;
+    & li a {
+    padding-left: 3rem;
+//    background: rgba($blue,.9);    
+    }
+}
+
+.green li a {
+    background: $green;
+    &:hover {background: lighten($green, 5%);}
+}
+.blue li a {
+    background: $blue;
+    &:hover {background: lighten($blue,5%);}
+}
+
+
 
 
